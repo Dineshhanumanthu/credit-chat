@@ -1,4 +1,4 @@
-const API = localStorage.getItem("apiBase") || "http://127.0.0.1:8000";
+const API = "https://credit-chat-backend.onrender.com";
 const $=id=>document.getElementById(id);
 function token(){return localStorage.getItem("token")||""}
 function logout(){localStorage.clear();location.href="index.html"}
