@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-
   <title>BANK | Staff</title>
 
   <link rel="stylesheet" href="style.css">
@@ -12,65 +11,35 @@
 <body>
 
 <header class="topbar">
-
-  <div class="logo">
-    BANK
-  </div>
+  <div class="logo">BANK</div>
 
   <div>
-
-    <span>
-      Staff portal
-    </span>
-
-    <button
-      class="ghost"
-      onclick="logout()"
-    >
-      Sign out
-    </button>
-
+    <span>Staff portal</span>
+    <button class="ghost" onclick="logout()">Sign out</button>
   </div>
-
 </header>
-
 
 <main class="container">
 
   <div class="page-head">
 
     <div>
+      <div class="eyebrow">STAFF PORTAL</div>
 
-      <div class="eyebrow">
-        STAFF PORTAL
-      </div>
-
-      <h1>
-        Application review
-      </h1>
+      <h1>Application review</h1>
 
       <p class="muted">
         Review credit risk and cross-sell recommendations.
       </p>
-
     </div>
 
-
-    <button
-      class="primary"
-      onclick="loadStaff()"
-    >
+    <button class="primary" onclick="loadStaff()">
       Refresh
     </button>
 
   </div>
 
-
-  <div
-    class="stats"
-    id="stats"
-  ></div>
-
+  <div class="stats" id="stats"></div>
 
   <section class="card">
 
@@ -79,37 +48,15 @@
       <table>
 
         <thead>
-
           <tr>
-
-            <th>
-              Application
-            </th>
-
-            <th>
-              Customer
-            </th>
-
-            <th>
-              Loan
-            </th>
-
-            <th>
-              Risk
-            </th>
-
-            <th>
-              Probability
-            </th>
-
-            <th>
-              Status
-            </th>
-
+            <th>Application</th>
+            <th>Customer</th>
+            <th>Loan</th>
+            <th>Risk</th>
+            <th>Probability</th>
+            <th>Status</th>
           </tr>
-
         </thead>
-
 
         <tbody id="appsBody"></tbody>
 
@@ -119,15 +66,9 @@
 
   </section>
 
+  <section class="card detail" id="detail">
 
-  <section
-    class="card detail"
-    id="detail"
-  >
-
-    <h3>
-      Select an application
-    </h3>
+    <h3>Select an application</h3>
 
     <p class="muted">
       Choose a row above to review it.
@@ -136,7 +77,6 @@
   </section>
 
 </main>
-
 
 <script src="app.js"></script>
 
