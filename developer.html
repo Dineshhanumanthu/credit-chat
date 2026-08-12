@@ -1,3 +1,81 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BANK | Developer</title><link rel="stylesheet" href="css/style.css"></head>
-<body><header class="topbar"><div class="logo">BANK</div><div>Developer portal <button class="ghost" onclick="logout()">Sign out</button></div></header>
-<main class="container"><div class="page-head"><div><div class="eyebrow">DEVELOPER PORTAL</div><h1>Model overview</h1></div><button class="primary" onclick="loadDeveloper()">Refresh</button></div><div class="stats" id="devStats"></div><section class="card"><h3>Model</h3><p id="devModel"></p></section></main><script src="js/app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bank | Developer</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <div class="logo">BANK</div>
+
+    <div>
+      Developer portal
+      <button
+        class="ghost"
+        onclick="logout()"
+      >
+        Sign out
+      </button>
+    </div>
+
+  </header>
+
+
+  <main class="container">
+
+    <div class="page-head">
+
+      <div>
+
+        <div class="eyebrow">
+          DEVELOPER PORTAL
+        </div>
+
+        <h1>
+          Model overview
+        </h1>
+
+      </div>
+
+      <button
+        class="primary"
+        onclick="loadDeveloper()"
+      >
+        Refresh
+      </button>
+
+    </div>
+
+
+    <div
+      class="stats"
+      id="devStats"
+    ></div>
+
+
+    <section class="card">
+
+      <h3>
+        Model
+      </h3>
+
+      <p id="devModel"></p>
+
+    </section>
+
+  </main>
+
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
