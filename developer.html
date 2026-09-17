@@ -1,81 +1,338 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Dashboard</title>
 
-  <title>Bank | Developer</title>
-
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header class="topbar">
+    <div class="developer-page">
 
-    <div class="logo">BANK</div>
+        <!-- HEADER -->
+        <div class="dev-header">
+            <div>
+                <h1>📊 Model Performance Metrics</h1>
+                <p>Performance metrics of the trained machine learning model.</p>
+            </div>
 
-    <div>
-      Developer portal
-      <button
-        class="ghost"
-        onclick="logout()"
-      >
-        Sign out
-      </button>
-    </div>
-
-  </header>
-
-
-  <main class="container">
-
-    <div class="page-head">
-
-      <div>
-
-        <div class="eyebrow">
-          DEVELOPER PORTAL
+            <button class="refresh-btn" onclick="loadDeveloper()">
+                ↻ Refresh
+            </button>
         </div>
 
-        <h1>
-          Model overview
-        </h1>
 
-      </div>
+        <!-- METRIC CARDS -->
+        <div class="metric-grid">
 
-      <button
-        class="primary"
-        onclick="loadDeveloper()"
-      >
-        Refresh
-      </button>
+            <div class="metric-card blue">
+                <div class="metric-icon">✓</div>
+                <div class="metric-title">Accuracy</div>
+                <div class="metric-value">0.9380</div>
+            </div>
+
+            <div class="metric-card green">
+                <div class="metric-icon">✓</div>
+                <div class="metric-title">Precision</div>
+                <div class="metric-value">0.7709</div>
+            </div>
+
+            <div class="metric-card purple">
+                <div class="metric-icon">◉</div>
+                <div class="metric-title">Recall</div>
+                <div class="metric-value">0.9851</div>
+            </div>
+
+            <div class="metric-card red">
+                <div class="metric-icon">◎</div>
+                <div class="metric-title">F1 Score</div>
+                <div class="metric-value">0.8651</div>
+            </div>
+
+        </div>
+
+
+        <!-- MIDDLE SECTION -->
+        <div class="two-column">
+
+
+            <!-- CONFUSION MATRIX -->
+            <div class="dashboard-card">
+
+                <h2>Confusion Matrix</h2>
+
+                <p class="card-subtitle">
+                    Test Set — 2000 samples
+                </p>
+
+                <div class="predicted-label">
+                    Predicted
+                </div>
+
+                <div class="matrix">
+
+                    <div></div>
+
+                    <div class="matrix-heading">
+                        Default
+                    </div>
+
+                    <div class="matrix-heading">
+                        Non-Default
+                    </div>
+
+
+                    <div class="actual-label">
+                        Actual<br>Default
+                    </div>
+
+                    <div class="matrix-good">
+                        397
+                    </div>
+
+                    <div class="matrix-bad">
+                        6
+                    </div>
+
+
+                    <div class="actual-label">
+                        Actual<br>Non-Default
+                    </div>
+
+                    <div class="matrix-bad">
+                        118
+                    </div>
+
+                    <div class="matrix-good">
+                        1479
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MODEL COMPARISON -->
+            <div class="dashboard-card">
+
+                <h2>Model Comparison</h2>
+
+                <div class="legend">
+                    <span>
+                        <i class="legend-blue"></i>
+                        Accuracy
+                    </span>
+
+                    <span>
+                        <i class="legend-green"></i>
+                        Precision
+                    </span>
+
+                    <span>
+                        <i class="legend-purple"></i>
+                        Recall
+                    </span>
+                </div>
+
+
+                <div class="chart">
+
+                    <!-- RANDOM FOREST -->
+                    <div class="chart-group">
+
+                        <div class="bars">
+
+                            <div
+                                class="bar blue-bar"
+                                style="height: 94%;"
+                            >
+                                <span>0.94</span>
+                            </div>
+
+                            <div
+                                class="bar green-bar"
+                                style="height: 77%;"
+                            >
+                                <span>0.77</span>
+                            </div>
+
+                            <div
+                                class="bar purple-bar"
+                                style="height: 99%;"
+                            >
+                                <span>0.99</span>
+                            </div>
+
+                        </div>
+
+                        <div class="chart-name">
+                            Random Forest
+                            <small>(Selected)</small>
+                        </div>
+
+                    </div>
+
+
+                    <!-- DECISION TREE -->
+                    <div class="chart-group">
+
+                        <div class="bars">
+
+                            <div
+                                class="bar blue-bar"
+                                style="height: 75%;"
+                            >
+                                <span>0.75</span>
+                            </div>
+
+                            <div
+                                class="bar green-bar"
+                                style="height: 70%;"
+                            >
+                                <span>0.70</span>
+                            </div>
+
+                            <div
+                                class="bar purple-bar"
+                                style="height: 77%;"
+                            >
+                                <span>0.77</span>
+                            </div>
+
+                        </div>
+
+                        <div class="chart-name">
+                            Decision Tree
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOGISTIC REGRESSION -->
+                    <div class="chart-group">
+
+                        <div class="bars">
+
+                            <div
+                                class="bar blue-bar"
+                                style="height: 70%;"
+                            >
+                                <span>0.70</span>
+                            </div>
+
+                            <div
+                                class="bar green-bar"
+                                style="height: 69%;"
+                            >
+                                <span>0.69</span>
+                            </div>
+
+                            <div
+                                class="bar purple-bar"
+                                style="height: 75%;"
+                            >
+                                <span>0.75</span>
+                            </div>
+
+                        </div>
+
+                        <div class="chart-name">
+                            Logistic<br>Regression
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM SECTION -->
+        <div class="two-column">
+
+
+            <!-- MODEL DETAILS -->
+            <div class="dashboard-card">
+
+                <h2>🛡 Model Details</h2>
+
+                <div class="details">
+
+                    <div>
+                        <span>Algorithm</span>
+                        <strong>Random Forest Classifier</strong>
+                    </div>
+
+                    <div>
+                        <span>Estimators</span>
+                        <strong>200</strong>
+                    </div>
+
+                    <div>
+                        <span>Max Depth</span>
+                        <strong>8</strong>
+                    </div>
+
+                    <div>
+                        <span>Random State</span>
+                        <strong>42</strong>
+                    </div>
+
+                    <div>
+                        <span>Pipeline</span>
+                        <strong>Preprocessing + Model</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATASET INFORMATION -->
+            <div class="dashboard-card">
+
+                <h2>🗄 Dataset Information</h2>
+
+                <div class="details">
+
+                    <div>
+                        <span>Dataset Name</span>
+                        <strong>Credit Risk Dataset</strong>
+                    </div>
+
+                    <div>
+                        <span>Total Records</span>
+                        <strong>32,581</strong>
+                    </div>
+
+                    <div>
+                        <span>Total Features</span>
+                        <strong>12</strong>
+                    </div>
+
+                    <div>
+                        <span>Target Column</span>
+                        <strong>loan_status</strong>
+                    </div>
+
+                    <div>
+                        <span>Default Rate</span>
+                        <strong>21.82%</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
-
-    <div
-      class="stats"
-      id="devStats"
-    ></div>
-
-
-    <section class="card">
-
-      <h3>
-        Model
-      </h3>
-
-      <p id="devModel"></p>
-
-    </section>
-
-  </main>
-
-
-  <script src="app.js"></script>
-
 </body>
-
 </html>
